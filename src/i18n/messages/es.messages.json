@@ -1,0 +1,122 @@
+{
+  "base": {
+    "searchBox": {
+      "clear": "Borrar",
+      "placeholder": "¿Qué estás buscando?"
+    },
+    "popularSearches": {
+      "title": "BÚSQUEDAS POPULARES"
+    },
+    "historyQueries": {
+      "clear": "Limpiar historial",
+      "removeLabel": "Borrar {suggestion} del historial",
+      "title": "HISTORIAL"
+    },
+    "myHistory": {
+      "title": "Mi Historial",
+      "subtitle": "Este es tu historial de búsqueda",
+      "message": "<span>Los datos se guardan en local. Solo están en tu dispositivo y nunca salen de ahí.</span><span>Puedes desactivar el historial de búsqueda cuando quieras.</span><span class=\"x-font-color--neutral-10 x-font-weight--bold\">Tu privacidad bajo tu control.</span>",
+      "noHistory": "No hay historial de búsqueda para mostrar",
+      "openButton": "Mi Historial",
+      "switch": {
+        "title": "Historial de búsqueda",
+        "enable": "Activar",
+        "disable": "Desactivar y eliminar historial"
+      },
+      "confirmDisableModal": {
+        "title": "¿Desactivar el historial de búsqueda?",
+        "message": "Si desactivas el historial de búsqueda, las búsquedas de tu historial serán eliminadas.",
+        "dismiss": "Cancelar",
+        "confirm": "Desactivar"
+      }
+    },
+    "nextQueries": {
+      "title": "QUIZÁS TE INTERESE"
+    },
+    "nextQueriesGroup": {
+      "message": "Los que buscaron <span class=\"x-text x-text--bold x-font-size--05\">\"{query}\"</span> también han visto:"
+    },
+    "nextQueryPreview": {
+      "message": "Los que buscaron {query} también han visto:",
+      "query": "{query}",
+      "totalResults": "({totalResults})",
+      "viewResults": "Ver todos los resultados"
+    },
+    "recommendations": {
+      "title": "Top Clicked"
+    },
+    "facets": {
+      "gender": "Género",
+      "categoryPaths": "Categorías",
+      "price": "Precio"
+    },
+    "facetsPanel": {
+      "title": "ORDENAR & FILTRAR",
+      "viewResults": "VER {totalResults} RESULTADOS"
+    },
+    "filters": {
+      "all": "Todo",
+      "showMore": "Mostrar más",
+      "showLess": "Mostrar menos"
+    },
+    "partialResults": {
+      "query": "{query}",
+      "totalResults": "({totalResults})",
+      "viewResults": "Ver todos los resultados"
+    },
+    "priceFilter": {
+      "lessThan": "hasta {max}",
+      "fromTo": "{min} - {max}",
+      "from": "desde {min}"
+    },
+    "toggleAside": {
+      "showAside": "Ordenar y Filtrar"
+    },
+    "totalResults": {
+      "message": "{totalResults} resultados para <span class=\"x-text x-text--bold x-font-size--05\">{query}</span>"
+    },
+    "sort": {
+      "label": "Ordenar por",
+      "values": {
+        "price asc": "Precio: De menor a mayor",
+        "price desc": "Precio: De mayor a menor",
+        "default": "Relevancia"
+      }
+    },
+    "selectedFilters": {
+      "clear": "LIMPIAR {selectedFiltersNumber} FILTROS"
+    },
+    "result": {
+      "addToCart": "AÑADIR AL CARRITO"
+    },
+    "spellcheck": {
+      "message": "No se han encontrado resultados para <span class=\"x-text--accent\">'{query}'</span>. Aquí tienes resultados para"
+    },
+    "noResults": {
+      "message": "<span>No se han encontrado resultados para <span class=\"x-text x-font-color--neutral-10 x-text--bold x-font-size--05\">\"{query}\"</span></span>Quizás te interesen estos productos"
+    },
+    "columnPicker": {
+      "message": "Ver"
+    },
+    "queryPreview": {
+      "viewResults": "Ver todos los resultados"
+    }
+  },
+  "mobile": {
+    "nextQueriesGroup": {
+      "message": "Los que buscaron <span class=\"x-text x-text--bold\">\"{query}\"</span> también han visto:"
+    },
+    "nextQueryPreview": {
+      "viewResults": "Ver todos"
+    },
+    "noResults": {
+      "message": "<span>No se han encontrado resultados para <span class=\"x-text x-font-color--neutral-10 x-text--bold\">\"{query}\"</span></span>Quizás te interesen estos productos"
+    },
+    "totalResults": {
+      "message": "{totalResults} resultados"
+    },
+    "queryPreview": {
+      "viewResults": "Ver todo"
+    }
+  }
+}
