@@ -1,0 +1,125 @@
+{
+  "base": {
+    "searchBox": {
+      "clear": "Clear",
+      "placeholder": "What are you looking for?"
+    },
+    "popularSearches": {
+      "title": "POPULAR SEARCHES"
+    },
+    "historyQueries": {
+      "clear": "Clear all",
+      "removeLabel": "Remove {suggestion} from history queries",
+      "title": "HISTORY QUERIES"
+    },
+    "myHistory": {
+      "title": "My History",
+      "subtitle": "This is the complete list of history queries",
+      "message": "<span>This data are stored locally. Just in your device and never travel outside of it.</span><span>You can disable the history queries whenever you want.</span><span class=\"x-font-color--neutral-10 x-font-weight--bold\">Your privacy under your control.</span>",
+      "noHistory": "No history activity to show",
+      "openButton": "My History",
+      "switch": {
+        "title": "History Queries",
+        "enable": "Enable",
+        "disable": "Disable and clear"
+      },
+      "confirmDisableModal": {
+        "title": "Disable History Queries?",
+        "message": "Disabling History Queries you also clear all the history list.",
+        "dismiss": "Cancel",
+        "confirm": "Disable"
+      }
+    },
+    "nextQueries": {
+      "title": "WHAT'S NEXT"
+    },
+    "nextQueriesGroup": {
+      "message": "Those who searched for <span class=\"x-text x-text--bold x-font-size--05\">\"{query}\"</span> also viewed:"
+    },
+    "nextQueryPreview": {
+      "message": "Those who searched for {query} also viewed:",
+      "query": "{query}",
+      "totalResults": "({totalResults})",
+      "viewResults": "View all results"
+    },
+    "identifierResults": {
+      "title": "SKU Search"
+    },
+    "recommendations": {
+      "title": "Top Clicked"
+    },
+    "facets": {
+      "gender": "Gender",
+      "categoryPaths": "Categories",
+      "price": "Price"
+    },
+    "facetsPanel": {
+      "title": "SORT & FILTER",
+      "viewResults": "VIEW {totalResults} RESULTS"
+    },
+    "filters": {
+      "all": "All",
+      "showMore": "Show more",
+      "showLess": "Show less"
+    },
+    "partialResults": {
+      "query": "{query}",
+      "totalResults": "({totalResults})",
+      "viewResults": "View all"
+    },
+    "priceFilter": {
+      "lessThan": "less than {max}",
+      "fromTo": "{min} - {max}",
+      "from": "from {min}"
+    },
+    "toggleAside": {
+      "showAside": "Sort & Filter"
+    },
+    "totalResults": {
+      "message": "{totalResults} results for <span class=\"x-text x-text--bold x-font-size--05\">{query}</span>"
+    },
+    "sort": {
+      "label": "Sort by",
+      "values": {
+        "price asc": "Price: Low to High",
+        "price desc": "Price: High to Low",
+        "default": "Relevancy"
+      }
+    },
+    "selectedFilters": {
+      "clear": "CLEAR {selectedFiltersNumber} FILTERS"
+    },
+    "result": {
+      "addToCart": "ADD TO CART"
+    },
+    "spellcheck": {
+      "message": "No results found for <span class=\"x-text x-text--accent x-text--bold\">'{query}'</span>. We show you results for"
+    },
+    "noResults": {
+      "message": "<span>Sorry but there are no results for <span class=\"x-text x-font-color--neutral-10 x-text--bold x-font-size--05\">\"{query}\"</span></span>You may be interested in these products"
+    },
+    "columnPicker": {
+      "message": "View"
+    },
+    "queryPreview": {
+      "viewResults": "View all results"
+    }
+  },
+  "mobile": {
+    "nextQueriesGroup": {
+      "message": "Those who searched for <span class=\"x-text x-text--bold\">\"{query}\"</span> also viewed:"
+    },
+    "nextQueryPreview": {
+      "viewResults": "View all"
+    },
+    "noResults": {
+      "message": "<span>Sorry but there are no results for <span class=\"x-text x-font-color--neutral-10 x-text--bold\">\"{query}\"</span></span>You may be interested in these products"
+    },
+    "totalResults": {
+      "message": "{totalResults} results"
+    },
+    "queryPreview": {
+      "viewResults": "View all"
+    }
+  }
+}
