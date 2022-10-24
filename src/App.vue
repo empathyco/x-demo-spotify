@@ -18,7 +18,6 @@
     XProvide
   } from '@empathyco/x-components';
   import { DeviceDetector } from '@empathyco/x-components/device';
-  import { FilterEntityFactory, SingleSelectModifier } from '@empathyco/x-components/facets';
   import { Tagging } from '@empathyco/x-components/tagging';
   import { UrlHandler } from '@empathyco/x-components/url';
   import { SnippetConfigExtraParams } from '@empathyco/x-components/extra-params';
@@ -28,8 +27,6 @@
   import '@empathyco/x-components/design-system/full-theme.css';
   import './design-system/tokens.scss';
   import './tailwind/index.css';
-
-  FilterEntityFactory.instance.registerModifierByFacetId('type', SingleSelectModifier);
 
   @Component({
     components: {

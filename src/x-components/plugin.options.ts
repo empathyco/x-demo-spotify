@@ -3,7 +3,7 @@ import { I18n } from '@empathyco/x-archetype-utils';
 import App from '../App.vue';
 import * as messages from '../i18n/messages';
 import store from '../store';
-import { adapter } from '../adapter/spotify-adapter';
+import { adapter } from '../adapter/adapter';
 
 export const installXOptions: InstallXOptions = {
   adapter,
