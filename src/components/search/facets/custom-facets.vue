@@ -17,7 +17,6 @@
                   <CheckboxCardSelectedIcon v-if="filter.selected" class="x-icon--l" />
                   <CheckboxCardUnselectedIcon v-else class="x-icon--l" />
                   <span class="x-filter__label">{{ filter.label }}</span>
-                  <span class="x-filter__count">({{ filter.totalResults }})</span>
                 </template>
               </SimpleFilter>
             </FiltersList>
