@@ -1,13 +1,19 @@
 import { endpointAdapterFactory, schemaMapperFactory } from '@empathyco/x-adapter';
 import { platformAdapter } from '@empathyco/x-adapter-platform';
-import { SearchRequest, SearchResponse, XComponentsAdapter } from '@empathyco/x-types';
+import { SearchRequest, SearchResponse, SimpleFacet, XComponentsAdapter } from '@empathyco/x-types';
 import { getToken } from './authentication';
 import SearchForItemParameterObject = SpotifyApi.SearchForItemParameterObject;
 import TrackSearchResponse = SpotifyApi.TrackSearchResponse;
 
 const requestMapper = schemaMapperFactory<SearchRequest, SearchForItemParameterObject>({
   q: 'query',
-  type: () => 'track',
+  type: ({ filters }) =>
+    filters && Object.values(filters).length
+      ? Object.values(filters)
+          .flat()
+          .map(filter => filter.id)
+          .join(',')
+      : 'track',
   limit: 'rows',
   offset: 'start'
 });
@@ -23,7 +29,38 @@ const responseMapper = schemaMapperFactory<TrackSearchResponse, SearchResponse>(
       url: 'external_urls.spotify',
       images: ({ album }) => album.images.map(({ url }) => url)
     }
-  }
+  },
+  facets: () =>
+    [
+      {
+        modelName: 'SimpleFacet',
+        id: 'type',
+        label: 'Type',
+        filters: [
+          {
+            modelName: 'SimpleFilter',
+            id: 'track',
+            label: 'track',
+            selected: false,
+            facetId: 'type'
+          },
+          {
+            modelName: 'SimpleFilter',
+            id: 'album',
+            label: 'album',
+            selected: false,
+            facetId: 'type'
+          },
+          {
+            modelName: 'SimpleFilter',
+            id: 'artist',
+            label: 'artist',
+            selected: false,
+            facetId: 'type'
+          }
+        ]
+      }
+    ] as SimpleFacet[]
 });
 
 const searchEndpointAdapter = endpointAdapterFactory<SearchRequest, SearchResponse>({
