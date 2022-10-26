@@ -30,37 +30,36 @@ const responseMapper = schemaMapperFactory<TrackSearchResponse, SearchResponse>(
       images: ({ album }) => album.images.map(({ url }) => url)
     }
   },
-  facets: () =>
-    [
-      {
-        modelName: 'SimpleFacet',
-        id: 'type',
-        label: 'Type',
-        filters: [
-          {
-            modelName: 'SimpleFilter',
-            id: 'track',
-            label: 'track',
-            selected: false,
-            facetId: 'type'
-          },
-          {
-            modelName: 'SimpleFilter',
-            id: 'album',
-            label: 'album',
-            selected: false,
-            facetId: 'type'
-          },
-          {
-            modelName: 'SimpleFilter',
-            id: 'artist',
-            label: 'artist',
-            selected: false,
-            facetId: 'type'
-          }
-        ]
-      }
-    ] as SimpleFacet[]
+  facets: (): SimpleFacet[] => [
+    {
+      modelName: 'SimpleFacet',
+      id: 'type',
+      label: 'Type',
+      filters: [
+        {
+          modelName: 'SimpleFilter',
+          id: 'track',
+          label: 'track',
+          selected: false,
+          facetId: 'type'
+        },
+        {
+          modelName: 'SimpleFilter',
+          id: 'album',
+          label: 'album',
+          selected: false,
+          facetId: 'type'
+        },
+        {
+          modelName: 'SimpleFilter',
+          id: 'artist',
+          label: 'artist',
+          selected: false,
+          facetId: 'type'
+        }
+      ]
+    }
+  ]
 });
 
 const searchEndpointAdapter = endpointAdapterFactory<SearchRequest, SearchResponse>({
