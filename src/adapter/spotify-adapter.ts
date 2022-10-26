@@ -1,6 +1,5 @@
-import { endpointAdapterFactory, Mapper, schemaMapperFactory } from '@empathyco/x-adapter';
+import { endpointAdapterFactory, Mapper, schemaMapperFactory, Schema } from '@empathyco/x-adapter';
 import { platformAdapter } from '@empathyco/x-adapter-platform';
-import { Schema } from '@empathyco/x-adapter/dist/types/schemas/types';
 import {
   RecommendationsRequest,
   RecommendationsResponse,
@@ -36,7 +35,11 @@ const requestMapper = schemaMapperFactory<SearchRequest, SearchForItemParameterO
   offset: 'start'
 });
 
-type SpotifyResult = TrackObjectFull | ArtistObjectFull | AlbumObjectSimplified | RecommendationTrackObject
+type SpotifyResult =
+  | TrackObjectFull
+  | ArtistObjectFull
+  | AlbumObjectSimplified
+  | RecommendationTrackObject;
 type ResponseObject = PagingObject<SpotifyResult>;
 
 const resultSchema: Schema<SpotifyResult, Result> = {
@@ -46,7 +49,7 @@ const resultSchema: Schema<SpotifyResult, Result> = {
   url: 'external_urls.spotify',
   images: responseObject =>
     ('images' in responseObject ? responseObject.images : responseObject.album.images).map(
-      ({ url }: any) => url
+      ({ url }) => url
     )
 };
 
@@ -117,6 +120,14 @@ const searchEndpointAdapter = endpointAdapterFactory<SearchRequest, SearchRespon
   responseMapper
 });
 
+const recommendationSchema: Schema<RecommendationTrackObject, Result> = {
+  modelName: () => 'Result',
+  id: 'id',
+  name: 'name',
+  url: 'external_urls.spotify',
+  images: ({ album }) => album.images.map(({ url }) => url)
+};
+
 const recommendationsEndpointAdapter = endpointAdapterFactory<
   RecommendationsRequest,
   RecommendationsResponse
@@ -127,7 +138,7 @@ const recommendationsEndpointAdapter = endpointAdapterFactory<
   responseMapper: schemaMapperFactory<RecommendationsObject, RecommendationsResponse>({
     results: {
       $path: 'tracks',
-      $subSchema: resultSchema as any
+      $subSchema: recommendationSchema
     }
   })
 });
