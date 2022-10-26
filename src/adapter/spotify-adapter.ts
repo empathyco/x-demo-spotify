@@ -120,14 +120,6 @@ const searchEndpointAdapter = endpointAdapterFactory<SearchRequest, SearchRespon
   responseMapper
 });
 
-const recommendationSchema: Schema<RecommendationTrackObject, Result> = {
-  modelName: () => 'Result',
-  id: 'id',
-  name: 'name',
-  url: 'external_urls.spotify',
-  images: ({ album }) => album.images.map(({ url }) => url)
-};
-
 const recommendationsEndpointAdapter = endpointAdapterFactory<
   RecommendationsRequest,
   RecommendationsResponse
@@ -138,7 +130,13 @@ const recommendationsEndpointAdapter = endpointAdapterFactory<
   responseMapper: schemaMapperFactory<RecommendationsObject, RecommendationsResponse>({
     results: {
       $path: 'tracks',
-      $subSchema: recommendationSchema
+      $subSchema: {
+        modelName: () => 'Result',
+        id: 'id',
+        name: 'name',
+        url: 'external_urls.spotify',
+        images: ({ album }) => album.images.map(({ url }) => url)
+      }
     }
   })
 });
