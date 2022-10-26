@@ -120,7 +120,13 @@ const recommendationsEndpointAdapter = endpointAdapterFactory<
   responseMapper: schemaMapperFactory<RecommendationsObject, RecommendationsResponse>({
     results: {
       $path: 'tracks',
-      $subSchema: resultSchema as any
+      $subSchema: {
+        modelName: () => 'Result',
+        id: 'id',
+        name: 'name',
+        url: 'external_urls.spotify',
+        images: ({ album }) => album.images.map(({ url }) => url)
+      }
     }
   })
 });
