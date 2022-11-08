@@ -7,6 +7,6 @@ export function getToken(): string {
   return (location.href =
     `https://accounts.spotify.com/authorize` +
     `?response_type=token` +
-    `&client_id=${encodeURIComponent('e61c27b7de0b4f0b82033dc83aeea1e6')}` +
+    `&client_id=${encodeURIComponent('f01827066edb4a7abc144de5ab994698')}` +
     `&redirect_uri=${encodeURIComponent(location.href)}`);
 }
