@@ -4,15 +4,15 @@
       <div
         class="
           x-list__item--expand
-          x-row x-row--align-start x-row--gap-04
+          x-row x-row--align-start x-row--gap-06
           x-padding--top-06 x-padding--bottom-05
         "
       >
-        <div class="x-row__item x-row__item--span-2 x-list x-padding--top-04">
+        <div class="x-row__item x-row__item--span-3 x-list" title="Powered by Spotify®">
           <Logo />
         </div>
 
-        <div class="x-row__item x-row__item--span-8 x-list x-list--vertical x-list--gap-05">
+        <div class="x-row__item x-row__item--span-6 x-list x-list--vertical x-list--gap-05">
           <div class="x-relative">
             <SearchBox />
             <LocationProvider location="predictive_layer">
@@ -26,7 +26,7 @@
 
         <div
           class="
-            x-row__item x-row__item--span-2
+            x-row__item x-row__item--span-3
             x-list x-list--horizontal x-list--justify-end x-list--wrap-reverse
           "
         >

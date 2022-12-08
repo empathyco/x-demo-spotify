@@ -22,6 +22,14 @@ import AlbumObjectSimplified = SpotifyApi.AlbumObjectSimplified;
 import RecommendationsObject = SpotifyApi.RecommendationsObject;
 import RecommendationTrackObject = SpotifyApi.RecommendationTrackObject;
 
+declare module '@empathyco/x-types' {
+  export interface Result {
+    uri?: string;
+    artists?: { name: string; uri: string }[];
+    album?: { name: string; uri: string };
+  }
+}
+
 const requestMapper = schemaMapperFactory<SearchRequest, SearchForItemParameterObject>({
   q: 'query',
   type: ({ filters }) =>
@@ -42,15 +50,31 @@ type SpotifyResult =
   | RecommendationTrackObject;
 type ResponseObject = PagingObject<SpotifyResult>;
 
-const resultSchema: Schema<SpotifyResult, Result> = {
+const resultSchema: Schema<
+  SpotifyResult & {
+    artists?: { name: string; uri: string }[];
+    album?: { name: string; uri: string };
+  },
+  Result
+> = {
   modelName: () => 'Result',
   id: 'id',
   name: 'name',
   url: 'external_urls.spotify',
+  uri: 'uri',
   images: responseObject =>
     ('images' in responseObject ? responseObject.images : responseObject.album.images).map(
       ({ url }) => url
-    )
+    ),
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  album: ({ album }, { type }) =>
+    type === 'tracks' ? { name: album?.name, uri: album?.uri } : undefined,
+  // @ts-ignore
+  artists: ({ artists }, { type }) =>
+    type === 'tracks' || type === 'album'
+      ? artists?.map(({ name, uri }) => ({ name, uri }))
+      : undefined
 };
 
 const objectResponseMapper = schemaMapperFactory<ResponseObject, SearchResponse>({

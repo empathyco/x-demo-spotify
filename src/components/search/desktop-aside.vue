@@ -16,7 +16,6 @@
       </BaseIdModalClose>
     </div>
     <div class="x-scroll x-list__item--expand x-padding--08 x-padding--top-00">
-      <Sort />
       <CustomFacets v-if="$x.totalResults > 0" />
     </div>
     <div
@@ -58,12 +57,10 @@
   import { Component, Vue } from 'vue-property-decorator';
   import { ClearFilters } from '@empathyco/x-components/facets';
   import CustomFacets from './facets/custom-facets.vue';
-  import Sort from './sort.vue';
 
   @Component({
     components: {
       CustomFacets,
-      Sort,
       BaseIdModalClose,
       CrossTinyIcon,
       ClearFilters
