@@ -7,18 +7,18 @@
       <div
         class="
           x-list x-list--horizontal x-list__item--expand
-          x-padding--05
-          x-list--align-center
+          x-padding--06
+          x-list--align-center x-list--gap-06
           x-background--neutral-100
         "
       >
-        <CloseMainModal
-          class="x-button--ghost x-padding--left-00"
-          :class="{ 'x-padding--right-03': $x.device === 'mobile' }"
-        >
+        <CloseMainModal class="x-button--ghost x-padding--00">
           <ArrowLeftIcon class="x-icon--l" />
         </CloseMainModal>
         <SearchBox class="x-list__item--expand" />
+        <div style="width: 40px; height: 40px">
+          <SpotifyIcon />
+        </div>
       </div>
     </template>
 
@@ -100,12 +100,14 @@
   import HasSearchedMixin from '../has-searched.mixin';
   import MobileMyHistoryAside from '../my-history/mobile-my-history-aside.vue';
   import MyHistoryConfirmDisableModal from '../my-history/my-history-confirm-disable-modal.vue';
+  import SpotifyIcon from '../spotify-icon.vue';
   import MobileCloseAside from './mobile-close-aside.vue';
   import MobileOpenAside from './mobile-open-aside.vue';
   import MobileToolbar from './mobile-toolbar.vue';
 
   @Component({
     components: {
+      SpotifyIcon,
       MyHistoryConfirmDisableModal,
       ArrowLeftIcon,
       BaseIdModal,

@@ -24,7 +24,7 @@
   --x-color-text-dropdown-toggle-default: var(--x-color-neutral-10);
 
   // Layout
-  --x-size-margin-left-layout-s: var(--x-size-base-10);
+  --x-size-min-margin-layout: var(--x-size-base-10);
   --x-color-background-layout-header-backdrop: transparent;
   --x-color-background-layout-header: var(--x-color-base-neutral-100);
 
@@ -37,7 +37,7 @@
   }
 
   // Image
-  --x-number-aspect-ratio-picture: 3/4;
+  --x-number-aspect-ratio-picture: 1/1;
 
   // Result
   --x-size-gap-result-default: var(--x-size-base-02);
