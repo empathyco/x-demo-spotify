@@ -39,7 +39,7 @@
     "vuex": "~3.6.2"
   },
   "devDependencies": {
-    "@cypress/webpack-preprocessor": "~5.11.1",
+    "@cypress/webpack-preprocessor": "~5.16.2",
     "@empathyco/eslint-plugin-x": "^2.0.0-alpha.14",
     "@empathyco/x-tailwindcss": "^0.2.0-alpha.19",
     "@empathyco/x-translations": "^1.1.0-alpha.27",
